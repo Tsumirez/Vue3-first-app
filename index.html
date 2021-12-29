@@ -16,12 +16,17 @@
 <body>
     <div id="vue_app">
         <h2 title="Vue.js 3">{{msg.toUpperCase()}}</h2>
-        <p>{{list[0]}} {{car.brand}}</p>
+        <p>{{list[0]}} {{car.brand}} {{city}}</p>
     </div>
     <script src="https://unpkg.com/vue@next"></script>
     <script>
         let app = Vue.createApp({
             //options object()
+            setup(){
+                return {
+                    city:'London'
+                }
+            },
             data(){
                 return {
                     msg:'Hello from Vue 3',
