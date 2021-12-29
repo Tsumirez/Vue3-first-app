@@ -15,15 +15,18 @@
 </head>
 <body>
     <div id="vue_app">
-        <h2 title="Vue.js 3">First Vue.js 3 app</h2>
+        <h2 title="Vue.js 3">{{msg.toUpperCase()}}</h2>
+        <p>{{list[0]}} {{car.brand}}</p>
     </div>
     <script src="https://unpkg.com/vue@next"></script>
     <script>
         let app = Vue.createApp({
-            //options object
+            //options object()
             data(){
                 return {
-                    msg:'Hello from Vue 3'
+                    msg:'Hello from Vue 3',
+                    list: ['appple','orange'],
+                    car:{brand: 'Nissan', model: 'GT-R'}
                 }
             }
         });
