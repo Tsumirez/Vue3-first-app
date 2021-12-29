@@ -15,23 +15,17 @@
 </head>
 <body>
     <div id="vue_app">
-        <h2 title="Vue.js 3">{{msg.toUpperCase()}}</h2>
-        <p>{{list[0]}} {{car.brand}} {{city}}</p>
+        <h2 v-bind:title='title'>{{msg}}</h2>
+        <input type="text" :value="msg" v-bind:disabled='!false'>
     </div>
     <script src="https://unpkg.com/vue@next"></script>
     <script>
         let app = Vue.createApp({
             //options object()
-            setup(){
-                return {
-                    city:'London'
-                }
-            },
             data(){
                 return {
-                    msg:'Hello from Vue 3',
-                    list: ['appple','orange'],
-                    car:{brand: 'Nissan', model: 'GT-R'}
+                    title:'control HTML attributes using v-bind',
+                    msg:'Vue directives: v-bind'
                 }
             }
         });
