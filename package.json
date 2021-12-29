@@ -1,0 +1,15 @@
+{
+  "name": "first-vue-3-app",
+  "version": "1.0.0",
+  "description": "my first app made with vue 3",
+  "main": "index.html",
+  "scripts": {
+    "dev": "lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Józef Smelcerz",
+  "license": "ISC",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
