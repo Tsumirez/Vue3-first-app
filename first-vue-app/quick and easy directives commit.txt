@@ -1,0 +1,19 @@
+Some quick and easy directives!
+
+v-text lets you set tag's text content through attribute rather than 
+moustache tags.
+
+<p v-text='title'></p> - title being reference to vue $data property in this case
+
+v-html lets you inject html string into the component to be treated as such and not js code. But overall it's NOT recommended, so avoid using it.
+
+
+v-once informs Vue to render marked element only once. Obvious gain in performance, but kills off reactivity, so use it wisely.
+
+v-pre tells Vue to skip compiling anything inside a given element and just output it as-is. This is good for bunch of static content.
+Care where you use it - if you use it on tags that have vue processing commands in them, these commands will be output as they are, instead of being parsed and executed. Great choice for displaying program code though.
+
+v-is can convert one html tag into another one. You put the tag name in some form of quotes other than attribute enclosing quotes. It is deprecated however since version 3.1.
+
+v-cloak is a fun one! Vue isn't too..elegant rendering it's codes. Before they are processed, raw output is displayed to user (such as unprocessed moustache tags). To hide the ugly and show the user only fully processed results you envelop the parts you want to "protect" with a tag equipped with v-cloak directive. Once that happens.... it's still the same.
+That's cause there's a second part to the equasion - you need to decalare css style for the v-cloak. That style will be applied to the cloaked element until processing of it's contents is finished.

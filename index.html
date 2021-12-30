@@ -1,35 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>First vue 3 app</title>
     <style>
-        body, h1,h2,h3,p,span,button,input {padding: 0;margin: 0;}
-        body{padding: 10px;}
-        h2{color:#008f7a;font-family: monospace;}
-        p{margin-top:10px;color:#005289;font-family: Verdana, Geneva, Tahoma, sans-serif;}
-        input {margin-top: 10px;}
+        body,
+        h1,
+        h2,
+        h3,
+        p,
+        span,
+        button,
+        input {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            padding: 10px;
+        }
+
+        h2 {
+            color: #008f7a;
+            font-family: monospace;
+        }
+
+        p {
+            margin-top: 10px;
+            color: #005289;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        [v-cloak]{display:none }
     </style>
 </head>
+
 <body>
     <div id="vue_app">
-        <h2 v-bind:title='title'>{{msg}}</h2>
-        <input type="text" :value="msg" v-bind:disabled='!false'>
+        <div v-cloak>
+            <h2 v-bind:title='title' v-pre>{{title}}</h2>
+            <h2 v-is='"b"' v-text='title' v-once></h2>
+            <p v-html='html'></p>
+        </div>
     </div>
     <script src="https://unpkg.com/vue@next"></script>
     <script>
         let app = Vue.createApp({
             //options object()
-            data(){
+            data() {
                 return {
-                    title:'control HTML attributes using v-bind',
-                    msg:'Vue directives: v-bind'
+                    title: 'Simple Vue Directives',
+                    html: '<b style="color:red">Raw HTML codes</b>',
+                    list: ['v-text', 'v-html', 'v-once', 'v-pre', 'v-is', 'v-cloak']
                 }
             }
         });
         let vm = app.mount('#vue_app')
     </script>
 </body>
+
 </html>
