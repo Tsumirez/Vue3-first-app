@@ -41,9 +41,12 @@
 <body>
     <div id="vue_app">
         <div v-cloak>
-            <h2 v-bind:title='title' v-pre>{{title}}</h2>
-            <h2 v-is='"b"' v-text='title' v-once></h2>
-            <p v-html='html'></p>
+            <p v-show='have'>Have your cake</p>
+            <p v-show='!have'>Eat your cake</p>
+
+            <p v-if='fruit=="apple"'>apple</p>
+            <p v-else-if='fruit=="orange"'>orange</p>
+            <p v-else>other fruit</p>
         </div>
     </div>
     <script src="https://unpkg.com/vue@next"></script>
@@ -52,9 +55,10 @@
             //options object()
             data() {
                 return {
-                    title: 'Simple Vue Directives',
-                    html: '<b style="color:red">Raw HTML codes</b>',
-                    list: ['v-text', 'v-html', 'v-once', 'v-pre', 'v-is', 'v-cloak']
+                    title: 'Conditional rendering',
+                    vue_dir: 'v-show, v-if, v-else,& v-else-if',
+                    have:false,
+                    fruit:'apple'
                 }
             }
         });
